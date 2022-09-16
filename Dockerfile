@@ -23,15 +23,15 @@ spec:
   source:
     git:
       ref: master
-      uri: 'https://github.com/datawire/hello-world-python.git'
+      uri: 'https://github.com/Eventines/openshifthelloworld.git'
     type: Git
   strategy:
-    sourceStrategy:
+    dockerStrategy:
       from:
-        kind: ImageStreamTag
+        kind: DockerImage
         name: 'python:3.6'
         namespace: openshift
-    type: Source
+    type: Docker
   triggers:
     - imageChange:
         lastTriggeredImageID: >-
